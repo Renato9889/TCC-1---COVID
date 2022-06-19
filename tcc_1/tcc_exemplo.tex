@@ -118,7 +118,7 @@ A Computação é uma grande aliada nessa luta contra a covid-19, os estudos em 
 
 \chapter{Mineração de Dados}
 
-Desde de os primórdios da computação estudar dados tem sido uma atividade bastante fundamental e com o passar do tempo isso vem se tornando cada vez mais importante e necessário, hoje podemos dizer que dados são um dos recursos computacionais mais valiosos, sendo de extrema importância para qualquer empresa ou instituição. Uma das tecnologias mais utilizadas quando se trata de estudar e explorar dados é a Mineração de Dados. 
+Desde de o inicio da computação estudar dados tem sido uma atividade bastante fundamental e com o passar do tempo isso vem se tornando cada vez mais importante e necessário, hoje podemos dizer que dados são um dos recursos computacionais mais valiosos, sendo de extrema importância para qualquer empresa ou instituição. Uma das tecnologias mais utilizadas quando se trata de estudar e explorar dados é a Mineração de Dados. 
 
 	O termo Mineração de Dados se refere ao conjunto de técnicas utilizadas para descobrir conhecimento explorando os dados, esse processo busca encontrar padrões, irregularidades e correlações entre os dados de uma base. Cada caso exige uma estratégia de mineração diferente, cabe então ao cientista de dados escolher a técnica adequada ao seu problema, por isso é necessário conhecer bem o tipo de dado que será trabalhado. 
 	
@@ -553,12 +553,186 @@ Com o algoritmo A Priori chegamos á alguns resultados a cerca da base de dados 
  \end{itemize}
 
 \chapter{Conclusões}
+    
+    Com os resultados foi possível chegar em algumas conclusões bastante interessantes acerca dos dados da base, principalmente a relação entre os sintomas e as características dos pacientes de covid-19, que foi o foco deste projeto.
+    
+    Através dos gráficos estatísticos dos dados chegamos em alguns pontos importantes, que são, a maioria dos pacientes são pessoas idosas; que os incidente de casos foram maiores em pessoas do sexo masculino e de raça branca; que dispneia, tosse, saturação e febre foram os sintomas que mais ocorreram; e por ultimo que pessoas com comorbidades do tipo obesidade e diabética tiveram maior vulnerabilidade.
+    
+    Para finalizar temos os gráficos que mostra os conhecimentos descobertos. Primeiro temos as relações entre os sintomas descobertas através do A Priori. 
+
     \begin{figure}[!h]
     \centering
-    \includegraphics[width=14cm]{AprioriIMG.jpg}
-    \caption{Gráfico com o support e o confidence do resultado do A Priori}
+    \includegraphics[width=13cm]{AprioriIMG.jpg}
+    \caption{Gráfico com o resultado do A Priori aplicado aos sintomas de covid-19}
     \end{figure}
-
+    
+    \begin{itemize}
+    \item 47,08\% dos pacientes que tiveram desconforto respiratório manifestaram também dispneia, sendo a confiança dessa regra acorrer de 83,59\%;
+    
+    \item 49,65\% dos pacientes que tiveram saturação manifestaram também dispneia, sendo a confiança dessa regra acorrer de 82,56\%;
+    
+    \item 46,27\% dos pacientes que tiveram febre manifestaram também tosse, sendo a confiança dessa regra acorrer de 78,58\%;
+    
+    \item 50,9\% dos pacientes que tiveram tosse manifestaram também dispneia, sendo a confiança dessa regra acorrer de 74,31\%;
+    
+    \item 50,9\% dos pacientes que tiveram dispneia manifestaram também tosse, sendo a confiança dessa regra acorrer de 72,9\%;
+    \end{itemize}
+    
+    O maior índice de ocorrência de dois sintomas relacionados é de que pessoas que tiveram tosse também apresentaram dispneia, mas com a confiança podemos afirmar que a associação mais garantida entre os sintomas é que o paciente que tiver desconforto respiratório certamente terá dispneia.
+    
+    Agora relacionando o sexo dos pacientes com os sintomas.
+    
+    \begin{figure}[!h]
+    \centering
+    \includegraphics[width=12cm]{AprioriIMG_sexo_feminino.jpg}
+    \caption{Resultado gráfico do A Priori relacionando os sintomas ao sexo feminino}
+    \end{figure}
+    
+    \begin{itemize}
+    \item 46,55\% dos pacientes do sexo feminino que tiveram desconforto respiratório manifestaram também dispneia, sendo a confiança dessa regra acorrer de 83,42\%;
+    
+    \item 48,76\% dos pacientes do sexo feminino que tiveram saturação manifestaram também dispneia, sendo a confiança dessa regra acorrer de 82,44\%;
+    
+    \item 49,81\% dos pacientes do sexo feminino que tiveram tosse manifestaram também dispneia, sendo a confiança dessa regra acorrer de 74,02\%;
+    
+    \item 49,81\% dos pacientes do sexo feminino que tiveram dispneia manifestaram também tosse, sendo a confiança dessa regra acorrer de 71,95\%;
+    
+    \item 48,76\% dos pacientes do sexo feminino que tiveram dispneia manifestaram também saturação, sendo a confiança dessa regra acorrer de 70,43\%;
+    \end{itemize}
+    
+      O maior índice de ocorrência de dois sintomas relacionados entre os pacientes do sexo feminino é que quem tiver tosse também apresentaram dispneia, mas com a confiança podemos afirmar que a associação mais provável de ocorrer entre os sintomas é que o paciente que tiver desconforto respiratório certamente terá dispneia.
+    
+    \begin{figure}[!h]
+    \centering
+    \includegraphics[width=13cm]{AprioriIMG_sexo_masculino.jpg}
+    \caption{Resultado gráfico do A Priori relacionando os sintomas ao sexo masculino}
+    \end{figure}
+    
+     \begin{itemize}
+    \item 47,5\% dos pacientes do sexo masculino que tiveram desconforto respiratório manifestaram também dispneia, sendo a confiança dessa regra acorrer de 83,72\%;
+    
+    \item 50,37\% dos pacientes do sexo masculino que tiveram saturação manifestaram também dispneia, sendo a confiança dessa regra acorrer de 82,66\%;
+    
+    \item 49,01\% dos pacientes do sexo masculino que tiveram febre manifestaram tosse, sendo a confiança dessa regra acorrer de 78,85\%;
+    
+    \item 51,78\% dos pacientes do sexo masculino que tiveram tosse manifestaram dispneia, sendo a confiança dessa regra acorrer de 74,53\%;
+    
+    \item 51,78\% dos pacientes do sexo masculino que tiveram dispneia manifestaram também tosse, sendo a confiança dessa regra acorrer de 73,65\%;
+    \end{itemize}
+    
+      Entre os pacientes do sexo masculino a associação que teve maior índice de ocorrência foi a quem teve tosse também manifestou dispneia e valendo também para a associação ao contrario (dispneia=>tosse), porém quando olhamos para a confiança podemos afirmar que a associação mais garantida de ocorrer entre os relacionamentos é a de que se o paciente do sexo masculino tiver desconforto respiratório certamente terá dispneia também, assim como nos pacientes de sexo feminino.
+      
+      Logo podemos dizer acerca dos dados apresentados que o sexo tem pouca influencia nas relações entre sintomas, só se pode afirmar que pessoas do sexo masculino tem maior manifestação de sintomas do que as pessoas de sexo feminino. 
+      
+      Vamos agora mostrar os resultados do A Priori quando relacionamos os sintomas com a raça dos pacientes.
+    
+    \begin{figure}[!h]
+    \centering
+    \includegraphics[width=14cm]{1_Preta_apriori.jpg}
+    \caption{Resultado gráfico do A Priori relacionando sintomas dos pacientes da raça preta}
+    \end{figure}
+    
+    \begin{itemize}
+    \item 49,43\% dos pacientes da raça preta que tiveram desconforto respiratório manifestaram também dispneia, sendo a confiança dessa regra acorrer de 83,72\%;
+    
+    \item 51,87\% dos pacientes da raça preta que tiveram saturação manifestaram também dispneia, sendo a confiança dessa regra acorrer de 82,88\%;
+    
+    \item 45,78\% dos pacientes da raça preta que tiveram febre manifestaram tosse, sendo a confiança dessa regra acorrer de 79,8\%;
+    
+    \item 46,28\% dos pacientes da raça preta que tiveram desconforto respiratório manifestaram saturação, sendo a confiança dessa regra acorrer de 78,39\%;
+    
+    \item 52,41\% dos pacientes da raça preta que tiveram tosse manifestaram também dispneia, sendo a confiança dessa regra acorrer de 75,87\%;
+    \end{itemize}
+    
+    Entre pacientes pretos a associação de sintomas que mais ocorre entre os casos é a de que se tiver a pessoa tiver saturação terá consequentemente dispneia, essa regra ocorre em cerca de 51,87\% dos casos. Conferindo a confiança podemos afirmar que a maior probabilidade de uma regra ser verdadeira e a que se a pessoa preta tiver desconforto respiratório terá dispneia.
+    
+    \begin{figure}[!h]
+    \centering
+    \includegraphics[width=3.3cm]{fund0.png}
+    \end{figure}
+    
+    \begin{figure}[!h]
+    \centering
+    \includegraphics[width=14cm]{1_Parda_apriori.jpg}
+    \caption{Resultado gráfico do A Priori relacionando sintomas dos pacientes da raça parda}
+    \end{figure}
+    
+  \begin{itemize}
+    \item 49,69\% dos pacientes da raça parda que tiveram saturação manifestaram também dispneia, sendo a confiança dessa regra acorrer de 84,47\%;
+    
+    \item 49,81\% dos pacientes da raça parda que tiveram desconforto respiratória manifestaram também dispneia, sendo a confiança dessa regra acorrer de 84,24\%;
+    
+    \item 49,43\% dos pacientes da raça parda que tiveram febre manifestaram tosse, sendo a confiança dessa regra acorrer de 80,65\%;
+    
+    \item 45,19\% dos pacientes da raça parda que tiveram saturação manifestaram desconforto respiratório, sendo a confiança dessa regra acorrer de 76,81\%;
+    
+    \item 45,19\% dos pacientes da raça preta que tiveram desconforto respiratório manifestaram também saturação, sendo a confiança dessa regra acorrer de 76,27\%;
+    \end{itemize}
+    
+    Nos pacientes pardos a associação de sintomas que mais ocorre entre os casos a que se a pessoa tiver desconforto respiratório terá dispneia, essa regra ocorre em cerca de 49,91\% dos casos. Observando a confiança podemos afirmar que a maior probabilidade de uma regra ser verdadeira entre os pardos e é a de que se a pessoa tiver saturação terá consequentemente dispneia.
+    
+    \begin{figure}[!h]
+    \centering
+    \includegraphics[width=3.3cm]{fund0.png}
+    \end{figure}
+    
+    \begin{figure}[!h]
+    \centering
+    \includegraphics[width=14cm]{1_Branca_apriori.jpg}
+    \caption{Resultado gráfico do A Priori relacionando sintomas dos pacientes da raça branca}
+    \end{figure}
+    
+    \begin{itemize}
+    
+    \item 49,35\% dos pacientes da raça branca que tiveram desconforto respiratória manifestaram também dispneia, sendo a confiança dessa regra acorrer de 84,01\%;
+    
+    \item 53,11\% dos pacientes da raça branca que tiveram saturação manifestaram também dispneia, sendo a confiança dessa regra acorrer de 82,45\%;
+    
+    \item 46,62\% dos pacientes da raça branca que tiveram desconforto respiratória manifestaram saturação, sendo a confiança dessa regra acorrer de 79,38\%;
+    
+    \item 53,11\% dos pacientes da raça branca que tiveram dispneia manifestaram saturação, sendo a confiança dessa regra acorrer de 74,88\%;
+    
+    \item 51,1\% dos pacientes da raça branca que tiveram tosse manifestaram também dispneia, sendo a confiança dessa regra acorrer de 74,63\%;
+    \end{itemize}
+    
+    Temos que entre os pacientes brancos a associação de sintomas que mais ocorre entre os casos a que se a pessoa tiver dispneia terá saturação, sendo essa afirmação valida também para a associação ao contrario (saturação resultando dispneia).Logo com a confiança pode-se afirmar que a associação desconforto respiratório implica dispneia tem a maior probabilidade de ser uma regra verdadeira entre os brancos.
+    
+    Sabe-se que o maior índice de casos ocorre entre pessoas brancas seguido de pessoas pardas, sendo que pessoas pretas tem um dos menores índices de ocorrência. Logo sobre a relação dos dados raciais e de sintomas em comum, vemos que em pardos e brancos saturação implicando dispneia é a associação os que mais ocorre, já em pretos tosse implicando dispneia é tem maior ocorrência. 
+    
+    Considerando a confiança concluímos que nos pacientes pretos e brancos a associação desconforto respiratório implica dispneia tem a maior probabilidade de ser uma regra verdadeira entre esses dados, e que em pardos é a associação saturação resultando ter dispneia a maior.
+    
+    \begin{figure}[!h]
+    \centering
+    \includegraphics[width=7.5cm]{1_Preta_feminino_apriori.jpg}
+    \includegraphics[width=7.5cm]{1_Parda_feminina_apriori.jpg}
+    \includegraphics[width=8cm]{1_Branca_feminino_apriori.jpg}
+    \caption{Gráficos dos resultados do relacionamento do sexo feminino e raça dos pacientes de covid-19}
+    \end{figure}
+    
+    O primeiro gráfico trás os pacientes do sexo feminino e da raça preta e suas associações de sintomas, vemos que a que mais aparece entre as regras de associação e a que saturação implica ter dispneia, com 51,97\% entre os casos. Medindo a confiança, temos que desconforto respiratório resultando em ter dispneia como a regra com a maior probabilidade de ser verdadeira, com o valor de 84,25\%.
+    
+    No segundo mostra os pacientes do sexo feminino e da raça parda e suas regras de associações de sintomas, onde temos que o maior incidente é a regra tosse resultando dispneia e o contrario também, dispneia resultando tosse, ambos com 52,21\%. Com a confiança temos que saturação provocando dispneia no paciente como a associação com maior probabilidade de ser verdadeira.
+    
+     Agora no terceiro e ultimo gráfico exibe-se os dados dos pacientes do sexo feminino e raça branca e as regras de associação de sintomas que essas características tem dentro da base, vemos que a regra dispneia resultando a pessoas ter saturação junto como o inverso (saturação implicando dispneia) como as como maior ocorrência entre os pacientes com essas características, sendo de 52,32\% . A confiança declara que desconforto respiratório provocando a pessoa com covid-19 ter dispneia é a associação com maior valor de ser verdadeira, 83,86\%.
+     
+    
+    \begin{figure}[!h]
+    \centering
+    \includegraphics[width=7.5cm]{1_Preta_masculino_apriori.jpg}
+    \includegraphics[width=7.5cm]{1_Parda_masculino_apriori.jpg}
+    \includegraphics[width=7.5cm]{1_Branca_masculino_apriori.jpg}
+    \caption{Gráficos dos resultados do relacionamento do sexo masculino e a raça dos pacientes}
+    \end{figure}
+    
+    Na figura 31 temos no primeiro gráfico os dados de pacientes do sexo masculino e raça preta e suas regras de associação de sintomas, temos como a maior ocorrência a regra tosse implicando dispneia, sendo 52\% de vezes que apareceu entre esses dados. Como maior confiança de ser uma regra verdadeira temos desconforto respiratório implicando dispneia, com 83,29\%.
+    
+    Segundo gráfico é dos pacientes do sexo masculino e raça parda com as regras de associação entre esse perfil, vemos que a regra com maior valor de incidência é febre resultando a pessoa ter tosse, como o numero de 51,74\%. A confiança de ser uma regra verdadeira com maior valor temos saturação resultando a pessoa ter dispneia, com 84\%.
+    
+    No ultimo gráfico da figura 31 mostra-se, os pacientes do sexo masculino e raça branca e suas regras de associação de sintomas, a regra de maior ocorrência é saturação implicando o paciente ter dispneia, e vise e versa, como o valor de 53,76\%. Como regra de maior confiança de ser verdadeira temos desconforto respiratório provocando o paciente ter dispneia também, com valor de 84,14\%.
+    
+    
+    
+    Para finalizar o projeto, pode-se dizer que conseguimos chegar em alguns conhecimentos úteis e interessantes a cerca dos dados. Um ponto importante observado é que os resultados foram afetados porque alguns sintomas são muito semelhantes, assim podendo causar certa monotonia entre os resultados dificultando uma melhora visão do que se tem em cada ponto trabalhado.
 
 \chapter{Cronograma de atividades}
 A descrição das atividades remanescentes está listada na Tabela \ref{tb:atividades}, enquanto que o cronograma é apresentado na Tabela \ref{tb:cronograma}.
